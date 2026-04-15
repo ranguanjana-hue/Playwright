@@ -3,6 +3,7 @@ test('herokuapp' ,async({browser})=>{
 
     const context = await browser.newContext(); //created a browser context
     const page = await context.newPage(); //created a main page
+    // const page
 
    
     await page.goto('https://the-internet.herokuapp.com/');  //opens main website
