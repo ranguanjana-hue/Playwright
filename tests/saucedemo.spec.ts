@@ -13,10 +13,16 @@ await page.click("#login-button");
 
 await expect(page).toHaveURL("https://www.saucedemo.com/inventory.html");
 
-const products =await page.locator('.clearinventory_item_name ').allTextContents();
-console.log("products:" , products);
+const products =await page.locator('.inventory_item_name ').allTextContents();//get all product names
+console.log(products);
 
- await expect(page.locator('.inventory_item_name')).toContainText('Backpack');
+const products =await page.locator('.inventory_item_name ').allTextContents();
+expect(products).toContain('sauce labs Backpack');
+
+
+
+
+
 
 
 

@@ -13,5 +13,8 @@ await page.click("#login-button");
 
 await expect(page).toHaveURL("https://www.saucedemo.com/inventory.html");
 await page.locator('//option [@value="lohi"]');
-//verify products are sorted correctly
+const products =await page.locator('//div[contains(text(),"Sauce Labs Backpack")]').allTextContents();
+console.log(products);
+await expect(page.locator('.inventory_item_name',{hasText:'sauce labs Backpack'} )).toBeVisible()
+// verify products are sorted correctly
 })
